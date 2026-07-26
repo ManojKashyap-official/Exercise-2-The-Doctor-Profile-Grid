@@ -1,0 +1,145 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --brand: #0e7490;
+  --brand-dark: #0c4a6e;
+  --text: #0f1724;
+  --muted: #64748b;
+  --border: #e2e8f0;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text);
+  background: #eef1f5;
+}
+
+.page {
+  min-height: 100vh;
+  padding: clamp(2rem, 5vw, 3rem) clamp(1rem, 4vw, 2rem);
+}
+
+.doctors {
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+.intro {
+  max-width: 36rem;
+  margin: 0 auto 2.5rem;
+  text-align: center;
+}
+
+.intro .overline {
+  margin: 0 0 0.5rem;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--brand);
+}
+
+.intro h1 {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.intro .lead {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.doctor-list {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+}
+
+.doctor-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(15, 23, 36, 0.06);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.doctor-card:hover {
+  box-shadow: 0 8px 24px rgba(15, 23, 36, 0.1);
+  transform: translateY(-2px);
+}
+
+.doctor-card .photo {
+  margin: 0;
+  aspect-ratio: 5 / 6;
+  overflow: hidden;
+  background: #e2e8f0;
+}
+
+.doctor-card .photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: var(--focus, center 20%);
+}
+
+.doctor-card .info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1.25rem;
+}
+
+.doctor-card h2 {
+  margin: 0 0 0.25rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.doctor-card .specialty {
+  margin: 0 0 1.25rem;
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+.doctor-card .btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding: 0.65rem 1rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #fff;
+  background: var(--brand);
+  border-radius: 8px;
+  transition: background 0.15s ease;
+}
+
+.doctor-card .btn::after {
+  content: "→";
+  font-size: 1.1rem;
+  line-height: 1;
+  opacity: 0.9;
+}
+
+.doctor-card .btn:hover {
+  background: var(--brand-dark);
+}
+
+.doctor-card .btn:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
